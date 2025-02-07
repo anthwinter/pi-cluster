@@ -31,3 +31,11 @@ spec:
   values:
     grafana:
       adminPassword: undert4ker
+      ingress:
+        enabled: true
+        ingressClassName: traefik
+        hosts:
+          - grafana.digitalwinter.uk
+        path: /
+        tls: []
+

@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: linkding
 resources:
   - ../../base/linkding/
+  - ../../base/audiobookshelf/
   # - cloudflare.yaml
   - ingress.yaml
   - cloudflare-secret.yaml

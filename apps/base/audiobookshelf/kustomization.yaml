@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - deployment.yaml
+  - service.yaml
+  - config-map.yaml
   # - storage.yaml
-  # - service.yaml

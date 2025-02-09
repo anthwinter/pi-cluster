@@ -17,4 +17,4 @@ spec:
           image: ghcr.io/advplyr/audiobookshelf:latest
           envFrom:
             - configMapRef:
-              name: audiobookshelf
+                name: audiobookshelf

@@ -17,21 +17,21 @@ spec:
           image: ghcr.io/advplyr/audiobookshelf:latest
           volumeMounts:
             - mounthPath: "/audiobooks"
-              name: audiobookshelf
+              name: audiobookshelf-data
               subPath: audiobooks
             - mounthPath: "/podcasts"
-              name: audiobookshelf
+              name: audiobookshelf-data
               subPath: podcasts
             - mounthPath: "/config"
-              name: audiobookshelf
+              name: audiobookshelf-data
               subPath: config
             - mounthPath: "/metadata"
-              name: audiobookshelf
+              name: audiobookshelf-data
               subPath: metadata
           envFrom:
             - configMapRef:
                 name: audiobookshelf
       volumes:
-        - name: audiobookshelf
+        - name: audiobookshelf-data
           persistentVolumeClaim:
             claimName: audiobookshelf-data-pvc

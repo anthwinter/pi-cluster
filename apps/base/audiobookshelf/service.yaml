@@ -4,8 +4,6 @@ metadata:
   name: audiobookshelf
 spec:
   selector:
-    app.kubernetes.io/name: audiobookshelf
+    app: audiobookshelf
   ports:
-    - protocol: TCP
-      port: 3005
-      targetPort: 3005
+    - port: 3005

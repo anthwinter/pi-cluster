@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mealie
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mealie
+  template:
+    metadata:
+      labels:
+        app: mealie
+    spec:
+      securityContext:
+        fsGroup: 33
+        runAsUser: 33
+        runAsGroup: 33
+      containers:
+        - name: mealie
+          image: ghcr.io/mealie-recipes/mealie:v3.2.1
+          ports:
+            - containerPort: 9000
+          resources:
+            limits:
+              memory: 1000M
+          volumeMounts:
+            - mountPath: "/app/data"
+              name: mealie-data
+          envFrom:
+            - secretRef:
+                name: mealie-container-env
+      volumes:
+        - name: mealie-data
+          persistentVolumeClaim:
+            claimName: mealie-data-pvc

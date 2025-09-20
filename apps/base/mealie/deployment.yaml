@@ -28,7 +28,7 @@ spec:
             - mountPath: "/app/data"
               name: mealie-data
           envFrom:
-            - secretRef:
+            - configMapRef:
                 name: mealie-container-env
       volumes:
         - name: mealie-data

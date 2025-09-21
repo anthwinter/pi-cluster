@@ -5,6 +5,7 @@ metadata:
 spec:
   ports:
     - port: 9925
+      targetPort: 9000
   selector:
     app: mealie
   type: ClusterIP
